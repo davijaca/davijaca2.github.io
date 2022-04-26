@@ -1,9 +1,4 @@
-<html>
-    
-<head>
-    <title>Pacmen</title>
-    <script>
-        const pacArray = [
+const pacArray = [
   	['./images/PacMan1.png', './images/PacMan2.png'],['./images/PacMan3.png', './images/PacMan4.png']
 ];
 var focus = 0;
@@ -17,14 +12,14 @@ function setToRandom(scale) {
 }
 
 function makePac() {
-  	let velocity = setToRandom(10); // {x:?, y:?}
-  	let position = setToRandom(300);
+  	let velocity = setToRandom(13); // {x:?, y:?}
+  	let position = setToRandom(800);
 	let direction = 0;
   	let game = document.getElementById('game');
   	let img = document.createElement('img');
   	img.style.position = 'absolute';
   	img.src = './images/PacMan1.png';
-  	img.style.width = 70;
+  	img.style.width = 100;
   	img.style.left = position.x + "px";
   	img.style.top = position.y + "px";
   	game.appendChild(img);
@@ -56,38 +51,3 @@ function checkCollisions(item) {
 function makeOne() {
 pacMen.push(makePac()); 
 }
-
-    </script>
-    <style>
-        #positionbuttons{
-        position: absolute;
-    top: 5%;
-    left: 20%;
-    width: 600px;
-    margin-left: -300px;
-        }
-        button{
-            width:200px;
-            padding: 20px;
-            border:50px;
-            border-color: black;
-            margin:10px;
-            border-radius:10px;
-            background: #ffd000;
-            font-size: 20px;
-            color:#41228e;
-        }
-        #move{
-            background:#ffd000;
-        }
-    </style>
-</head>
-<body style="background:#41228e;">
-    <div id="positionbuttons">
-        <button onclick='makeOne()' >MAKE'EM</button>
-        <button id="move" onclick='update()'>MOVE'EM</button>
-    </div>
-        <div id='game'>
-    </div>
-</body>
-</html>
